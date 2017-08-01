@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://w2c.xyz/"/>
-  <updated>2017-07-31T14:18:06.000Z</updated>
+  <updated>2017-08-01T13:41:51.000Z</updated>
   <id>http://w2c.xyz/</id>
   
   <author>
@@ -14,6 +14,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用window.open()方法打开的页面被浏览器拦截的原因及解决方案</title>
+    <link href="http://w2c.xyz/2017/08/01/window-open/"/>
+    <id>http://w2c.xyz/2017/08/01/window-open/</id>
+    <published>2017-08-01T12:54:57.000Z</published>
+    <updated>2017-08-01T13:41:51.000Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>最近项目中遇到了在使用`window.open()`方法在新窗口打开页面时该页面会被浏览器拦截（阻止打开）的问题。
+这种情况出现在`ajax`方法内，也就是说，当浏览器检测到非用户直接（主动）操作产生的新打开窗口时，就会判定该窗口不安全，随即对其进行拦截。
+</code></pre><p>这里提供两种解决方案：</p>
+<ol>
+<li>异步改为同步（在必须异步请求时，可采用下面的方法）</li>
+<li>在ajax方法外新开一个空白页面，并指向一个对象，最后在ajax方法内修改该对象的URL即可<br>如下：<br> `$(‘#btn’).on(‘click’,function(){<pre><code>var tab = window.open();
+$.ajax({
+    type: &apos;POST&apos;,
+    url: &apos;/request&apos;,
+    dataType: &apos;json&apos;,
+    success: function(d){
+        tab.location = d.url;
+    }
+});
+</code></pre> })`</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code&gt;最近项目中遇到了在使用`window.open()`方法在新窗口打开页面时该页面会被浏览器拦截（阻止打开）的问题。
+这种情况出现在`ajax`方法内，也就是说，当浏览器检测到非用户直接（主动）操作产生的新打开窗口时，就会判定该窗口不安全，随即对其进行拦截。
+
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://w2c.xyz/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://w2c.xyz/tags/JavaScript/"/>
+    
+      <category term="browser" scheme="http://w2c.xyz/tags/browser/"/>
+    
+  </entry>
   
   <entry>
     <title>git commit -m 与 git commit -am 的区别</title>

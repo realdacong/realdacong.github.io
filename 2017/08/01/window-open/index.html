@@ -95,7 +95,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JavaScript,browser," />
 
 
 
@@ -113,13 +113,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Cycle">
-<meta property="og:url" content="http://w2c.xyz/tags/git/index.html">
+<meta name="description" content="最近项目中遇到了在使用`window.open()`方法在新窗口打开页面时该页面会被浏览器拦截（阻止打开）的问题。 这种情况出现在`ajax`方法内，也就是说，当浏览器检测到非用户直接（主动）操作产生的新打开窗口时，就会判定该窗口不安全，随即对其进行拦截。 这里提供两种解决方案：  异步改为同步（在必须异步请求时，可采用下面的方法） 在ajax方法外新开一个空白页面，并指向一个对象，最后在ajax">
+<meta name="keywords" content="JavaScript,browser">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用window.open()方法打开的页面被浏览器拦截的原因及解决方案">
+<meta property="og:url" content="http://w2c.xyz/2017/08/01/window-open/index.html">
 <meta property="og:site_name" content="Cycle">
+<meta property="og:description" content="最近项目中遇到了在使用`window.open()`方法在新窗口打开页面时该页面会被浏览器拦截（阻止打开）的问题。 这种情况出现在`ajax`方法内，也就是说，当浏览器检测到非用户直接（主动）操作产生的新打开窗口时，就会判定该窗口不安全，随即对其进行拦截。 这里提供两种解决方案：  异步改为同步（在必须异步请求时，可采用下面的方法） 在ajax方法外新开一个空白页面，并指向一个对象，最后在ajax">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-01T13:41:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cycle">
+<meta name="twitter:title" content="使用window.open()方法打开的页面被浏览器拦截的原因及解决方案">
+<meta name="twitter:description" content="最近项目中遇到了在使用`window.open()`方法在新窗口打开页面时该页面会被浏览器拦截（阻止打开）的问题。 这种情况出现在`ajax`方法内，也就是说，当浏览器检测到非用户直接（主动）操作产生的新打开窗口时，就会判定该窗口不安全，随即对其进行拦截。 这里提供两种解决方案：  异步改为同步（在必须异步请求时，可采用下面的方法） 在ajax方法外新开一个空白页面，并指向一个对象，最后在ajax">
 
 
 
@@ -147,13 +152,13 @@
 
 
 
-  <link rel="canonical" href="http://w2c.xyz/tags/git/"/>
+  <link rel="canonical" href="http://w2c.xyz/2017/08/01/window-open/"/>
 
 
 
 
 
-  <title>标签: git | Cycle</title>
+  <title>使用window.open()方法打开的页面被浏览器拦截的原因及解决方案 | Cycle</title>
   
 
 
@@ -178,7 +183,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -282,44 +287,225 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>git<small>标签</small>
-      </h1>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://w2c.xyz/2017/08/01/window-open/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cycle">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cycle">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">使用window.open()方法打开的页面被浏览器拦截的原因及解决方案</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-01T20:54:57+08:00">
+                2017-08-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <pre><code>最近项目中遇到了在使用`window.open()`方法在新窗口打开页面时该页面会被浏览器拦截（阻止打开）的问题。
+这种情况出现在`ajax`方法内，也就是说，当浏览器检测到非用户直接（主动）操作产生的新打开窗口时，就会判定该窗口不安全，随即对其进行拦截。
+</code></pre><p>这里提供两种解决方案：</p>
+<ol>
+<li>异步改为同步（在必须异步请求时，可采用下面的方法）</li>
+<li>在ajax方法外新开一个空白页面，并指向一个对象，最后在ajax方法内修改该对象的URL即可<br>如下：<br> `$(‘#btn’).on(‘click’,function(){<pre><code>var tab = window.open();
+$.ajax({
+    type: &apos;POST&apos;,
+    url: &apos;/request&apos;,
+    dataType: &apos;json&apos;,
+    success: function(d){
+        tab.location = d.url;
+    }
+});
+</code></pre> })`</li>
+</ol>
 
-      <h2 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/07/28/My-New-Post/" itemprop="url">
-              
-                <span itemprop="name">git commit -m 与 git commit -am 的区别</span>
-              
-            </a>
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+  <p><span>本文标题:</span><a href="/2017/08/01/window-open/">使用window.open()方法打开的页面被浏览器拦截的原因及解决方案</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 Cycle 的个人博客">Cycle</a></p>
+  <p><span>发布时间:</span>2017年08月01日 - 20:08</p>
+  <p><span>最后更新:</span>2017年08月01日 - 21:08</p>
+  <p><span>原始链接:</span><a href="/2017/08/01/window-open/" title="使用window.open()方法打开的页面被浏览器拦截的原因及解决方案">http://w2c.xyz/2017/08/01/window-open/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://w2c.xyz/2017/08/01/window-open/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>
+</div>
+<script>
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({
+          title: "",
+          text: '复制成功',
+          html: false,
+          timer: 500,
+          showConfirmButton: false
+        });
+      });
+    }));
+</script>
+
+
+      
+    </div>
+    
+    <div>
+      
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-28T17:35:57+08:00"
-              content="2017-07-28" >
-          07-28
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          
+            <a href="/tags/browser/" rel="tag"><i class="fa fa-tag"></i> browser</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/28/My-New-Post/" rel="next" title="git commit -m 与 git commit -am 的区别">
+                <i class="fa fa-chevron-left"></i> git commit -m 与 git commit -am 的区别
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -327,6 +513,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTgyNi82Mzky"></div>
+    
+  </div>
+
 
         </div>
         
@@ -543,10 +735,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
@@ -575,6 +767,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://w2c.xyz/"/>
+  <link href="http://dacong.pro/"/>
   <updated>2017-08-01T13:53:20.000Z</updated>
-  <id>http://w2c.xyz/</id>
+  <id>http://dacong.pro/</id>
   
   <author>
     <name>Wang Chong</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>window.open()打开页面被浏览器拦截的原因及解决方案</title>
-    <link href="http://w2c.xyz/2017/08/01/window-open/"/>
-    <id>http://w2c.xyz/2017/08/01/window-open/</id>
+    <link href="http://dacong.pro/2017/08/01/window-open/"/>
+    <id>http://dacong.pro/2017/08/01/window-open/</id>
     <published>2017-08-01T12:54:57.000Z</published>
     <updated>2017-08-01T13:53:20.000Z</updated>
     
@@ -40,12 +40,12 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://w2c.xyz/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="http://dacong.pro/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="http://w2c.xyz/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://dacong.pro/tags/JavaScript/"/>
     
-      <category term="browser" scheme="http://w2c.xyz/tags/browser/"/>
+      <category term="browser" scheme="http://dacong.pro/tags/browser/"/>
     
   </entry>
   

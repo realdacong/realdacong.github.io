@@ -113,18 +113,18 @@
 
 
 
-<meta name="description" content="跨页面（新打开的页面，不跨域）传值往往选择location.href传参、cookie或本地存储等的方式。不过 location.href 传参不够便捷且不安全，另外 cookie 存储在window.open后有可能会丢失（cookie 存储路径的问题，这里不再赘述）， 考虑IE兼容性，本地存储也不适用。这个时候看到了window.opener，瞬间清醒。 利用window.opener可以做很">
+<meta name="description" content="跨页面（新打开的页面，不跨域）传值往往选择location.href传参、cookie或本地存储等的方式。不过 location.href 传参不够便捷且不安全，另外 cookie 存储在window.open后有可能会丢失（cookie 存储路径的问题，这里不再赘述）， 考虑IE兼容性，本地存储也不适用。这个时候看到了window.opener，瞬间清醒。 window.opener概述返回打开">
 <meta name="keywords" content="JavaScript,跨域">
 <meta property="og:type" content="article">
 <meta property="og:title" content="window.opener">
 <meta property="og:url" content="http://dacong.pro/2017/08/03/window-opener/index.html">
 <meta property="og:site_name" content="Cycle">
-<meta property="og:description" content="跨页面（新打开的页面，不跨域）传值往往选择location.href传参、cookie或本地存储等的方式。不过 location.href 传参不够便捷且不安全，另外 cookie 存储在window.open后有可能会丢失（cookie 存储路径的问题，这里不再赘述）， 考虑IE兼容性，本地存储也不适用。这个时候看到了window.opener，瞬间清醒。 利用window.opener可以做很">
+<meta property="og:description" content="跨页面（新打开的页面，不跨域）传值往往选择location.href传参、cookie或本地存储等的方式。不过 location.href 传参不够便捷且不安全，另外 cookie 存储在window.open后有可能会丢失（cookie 存储路径的问题，这里不再赘述）， 考虑IE兼容性，本地存储也不适用。这个时候看到了window.opener，瞬间清醒。 window.opener概述返回打开">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-03T14:34:08.000Z">
+<meta property="og:updated_time" content="2017-08-03T14:50:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="window.opener">
-<meta name="twitter:description" content="跨页面（新打开的页面，不跨域）传值往往选择location.href传参、cookie或本地存储等的方式。不过 location.href 传参不够便捷且不安全，另外 cookie 存储在window.open后有可能会丢失（cookie 存储路径的问题，这里不再赘述）， 考虑IE兼容性，本地存储也不适用。这个时候看到了window.opener，瞬间清醒。 利用window.opener可以做很">
+<meta name="twitter:description" content="跨页面（新打开的页面，不跨域）传值往往选择location.href传参、cookie或本地存储等的方式。不过 location.href 传参不够便捷且不安全，另外 cookie 存储在window.open后有可能会丢失（cookie 存储路径的问题，这里不再赘述）， 考虑IE兼容性，本地存储也不适用。这个时候看到了window.opener，瞬间清醒。 window.opener概述返回打开">
 
 
 
@@ -384,7 +384,8 @@
 
       
         <p>跨页面（新打开的页面，不跨域）传值往往选择<code>location.href</code>传参、<code>cookie</code>或本地存储等的方式。不过 location.href 传参不够便捷且不安全，另外 cookie 存储在<code>window.open</code>后有可能会丢失（cookie 存储路径的问题，这里不再赘述）， 考虑IE兼容性，本地存储也不适用。这个时候看到了<strong><code>window.opener</code></strong>，瞬间清醒。</p>
-<p>利用<strong><code>window.opener</code></strong>可以做很多操作，比如：</p>
+<h5 id="window-opener概述"><a href="#window-opener概述" class="headerlink" title="window.opener概述"></a>window.opener概述</h5><pre><code>返回打开当前窗口的那个窗口的引用
+</code></pre><p>利用<strong><code>window.opener</code></strong>可以做很多操作，比如：</p>
 <blockquote>
 <p>从父页面取值：<br><strong><code>window.opener</code></strong>.document.getElementById(“name”).value;</p>
 <p>调用父页面的函数：<br><strong><code>window.opener</code></strong>.sf();</p>
@@ -534,8 +535,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -604,6 +614,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#window-opener概述"><span class="nav-number">1.</span> <span class="nav-text">window.opener概述</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

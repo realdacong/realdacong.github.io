@@ -121,7 +121,7 @@
 <meta property="og:site_name" content="Cycle">
 <meta property="og:description" content="跨页面（新打开的页面，不跨域）传值往往选择location.href传参、cookie或本地存储等的方式。不过 location.href 传参不够便捷且不安全，另外 cookie 存储在window.open后有可能会丢失（cookie 存储路径的问题，这里不再赘述）， 考虑IE兼容性，本地存储也不适用。这个时候看到了window.opener，瞬间清醒。 window.opener概述返回打开">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-03T14:50:35.000Z">
+<meta property="og:updated_time" content="2017-08-03T14:54:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="window.opener">
 <meta name="twitter:description" content="跨页面（新打开的页面，不跨域）传值往往选择location.href传参、cookie或本地存储等的方式。不过 location.href 传参不够便捷且不安全，另外 cookie 存储在window.open后有可能会丢失（cookie 存储路径的问题，这里不再赘述）， 考虑IE兼容性，本地存储也不适用。这个时候看到了window.opener，瞬间清醒。 window.opener概述返回打开">
@@ -385,14 +385,13 @@
       
         <p>跨页面（新打开的页面，不跨域）传值往往选择<code>location.href</code>传参、<code>cookie</code>或本地存储等的方式。不过 location.href 传参不够便捷且不安全，另外 cookie 存储在<code>window.open</code>后有可能会丢失（cookie 存储路径的问题，这里不再赘述）， 考虑IE兼容性，本地存储也不适用。这个时候看到了<strong><code>window.opener</code></strong>，瞬间清醒。</p>
 <h5 id="window-opener概述"><a href="#window-opener概述" class="headerlink" title="window.opener概述"></a>window.opener概述</h5><pre><code>返回打开当前窗口的那个窗口的引用
-</code></pre><p>利用<strong><code>window.opener</code></strong>可以做很多操作，比如：</p>
+</code></pre><h5 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h5><p>利用<strong><code>window.opener</code></strong>可以做很多操作，比如：</p>
 <blockquote>
 <p>从父页面取值：<br><strong><code>window.opener</code></strong>.document.getElementById(“name”).value;</p>
 <p>调用父页面的函数：<br><strong><code>window.opener</code></strong>.sf();</p>
 <p>控制父页面的状态：<br><strong><code>window.opener</code></strong>.close();</p>
 </blockquote>
-<p><strong>在以上操作中有以下两点需要注意：</strong></p>
-<ol>
+<h5 id="在以上操作中有以下两点需要注意："><a href="#在以上操作中有以下两点需要注意：" class="headerlink" title="在以上操作中有以下两点需要注意："></a>在以上操作中有以下两点需要注意：</h5><ol>
 <li>在操作期间父窗口不能被关闭，一旦关闭，相关操作将不再有效。</li>
 <li>在新打开的窗口跨域的情况下是无法获取<strong><code>window.opener</code></strong>的，这时候需要在父级及子级页面中将当前域名的一级域名指向<code>document.domain</code>，比如<code>document.domain = &#39;abc.com&#39;</code>来解决问题。注意，这里的父级和子级页面的域名要在同一基础域中（如abc.com和a.abc.com）才可通过以上方法解决，否则以上方法无效，需要通过其它方式（如 <code>jsonp</code>、<code>window.name</code>等）去解决跨域问题。</li>
 </ol>
@@ -624,7 +623,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#window-opener概述"><span class="nav-number">1.</span> <span class="nav-text">window.opener概述</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#window-opener概述"><span class="nav-number">1.</span> <span class="nav-text">window.opener概述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用方法"><span class="nav-number">2.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在以上操作中有以下两点需要注意："><span class="nav-number">3.</span> <span class="nav-text">在以上操作中有以下两点需要注意：</span></a></li></ol></div>
             
 
           </div>

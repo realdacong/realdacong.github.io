@@ -392,7 +392,8 @@
 <p>调用父页面的函数：<br><strong><code>window.opener</code></strong>.sf();</p>
 <p>控制父页面的状态：<br><strong><code>window.opener</code></strong>.close();</p>
 </blockquote>
-<h5 id="在以上操作中有以下两点需要注意："><a href="#在以上操作中有以下两点需要注意：" class="headerlink" title="在以上操作中有以下两点需要注意："></a>在以上操作中有以下两点需要注意：</h5><ol>
+<h5 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h5><p>在以上操作中有以下两点需要注意：</p>
+<ol>
 <li>在操作期间父窗口不能被关闭，一旦关闭，相关操作将不再有效。</li>
 <li>在新打开的窗口跨域的情况下是无法获取<strong><code>window.opener</code></strong>的，这时候需要在父级及子级页面中将当前域名的一级域名指向<code>document.domain</code>，比如<code>document.domain = &#39;abc.com&#39;</code>来解决问题。注意，这里的父级和子级页面的域名要在同一基础域中（如abc.com和a.abc.com）才可通过以上方法解决，否则以上方法无效，需要通过其它方式（如 <code>jsonp</code>、<code>window.name</code>等）去解决跨域问题。</li>
 </ol>

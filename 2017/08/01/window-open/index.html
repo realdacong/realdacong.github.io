@@ -113,18 +113,18 @@
 
 
 
-<meta name="description" content="最近项目中遇到了在使用window.open()方法在新窗口打开页面时该页面会被浏览器拦截（阻止打开）的问题。这种情况出现在ajax方法内，也就是说，当浏览器检测到非用户直接（主动）操作产生的新打开窗口时，就会判定该窗口不安全，随即对其进行拦截。  这里提供两种解决方案：  异步改为同步（在必须异步请求时，可采用下面的方法） 在ajax方法外新开一个空白页面，并指向一个对象，最后在ajax方法内">
+<meta name="description" content="最近项目中遇到了在使用window.open()方法在新窗口打开页面时该页面会被浏览器拦截（阻止打开）的问题。这种情况出现在ajax方法内，也就是说，当浏览器检测到非用户直接（主动）操作产生的新打开窗口时，就会判定该窗口不安全，随即对其进行拦截。">
 <meta name="keywords" content="JavaScript,browser">
 <meta property="og:type" content="article">
 <meta property="og:title" content="window.open()打开页面被浏览器拦截的原因及解决方案">
 <meta property="og:url" content="http://dacong.pro/2017/08/01/window-open/index.html">
 <meta property="og:site_name" content="Cycle">
-<meta property="og:description" content="最近项目中遇到了在使用window.open()方法在新窗口打开页面时该页面会被浏览器拦截（阻止打开）的问题。这种情况出现在ajax方法内，也就是说，当浏览器检测到非用户直接（主动）操作产生的新打开窗口时，就会判定该窗口不安全，随即对其进行拦截。  这里提供两种解决方案：  异步改为同步（在必须异步请求时，可采用下面的方法） 在ajax方法外新开一个空白页面，并指向一个对象，最后在ajax方法内">
+<meta property="og:description" content="最近项目中遇到了在使用window.open()方法在新窗口打开页面时该页面会被浏览器拦截（阻止打开）的问题。这种情况出现在ajax方法内，也就是说，当浏览器检测到非用户直接（主动）操作产生的新打开窗口时，就会判定该窗口不安全，随即对其进行拦截。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-01T13:53:20.000Z">
+<meta property="og:updated_time" content="2017-08-04T15:02:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="window.open()打开页面被浏览器拦截的原因及解决方案">
-<meta name="twitter:description" content="最近项目中遇到了在使用window.open()方法在新窗口打开页面时该页面会被浏览器拦截（阻止打开）的问题。这种情况出现在ajax方法内，也就是说，当浏览器检测到非用户直接（主动）操作产生的新打开窗口时，就会判定该窗口不安全，随即对其进行拦截。  这里提供两种解决方案：  异步改为同步（在必须异步请求时，可采用下面的方法） 在ajax方法外新开一个空白页面，并指向一个对象，最后在ajax方法内">
+<meta name="twitter:description" content="最近项目中遇到了在使用window.open()方法在新窗口打开页面时该页面会被浏览器拦截（阻止打开）的问题。这种情况出现在ajax方法内，也就是说，当浏览器检测到非用户直接（主动）操作产生的新打开窗口时，就会判定该窗口不安全，随即对其进行拦截。">
 
 
 
@@ -384,13 +384,12 @@
 
       
         <blockquote>
-<p>最近项目中遇到了在使用<code>window.open()</code>方法在新窗口打开页面时该页面会被浏览器拦截（阻止打开）的问题。<br>这种情况出现在<code>ajax</code>方法内，也就是说，当浏览器检测到非用户直接（主动）操作产生的新打开窗口时，就会判定该窗口不安全，随即对其进行拦截。</p>
-</blockquote>
-<p>这里提供两种解决方案：</p>
+<p>最近项目中遇到了在使用<code>window.open()</code>方法在新窗口打开页面时该页面会被浏览器拦截（阻止打开）的问题。<br>这种情况出现在<code>ajax</code>方法内，也就是说，当浏览器检测到非用户直接（主动）操作产生的新打开窗口时，就会判定该窗口不安全，随即对其进行拦截。<br><a id="more"></a><br>这里提供两种解决方案：</p>
 <ol>
 <li>异步改为同步（在必须异步请求时，可采用下面的方法）</li>
 <li>在ajax方法外新开一个空白页面，并指向一个对象，最后在ajax方法内修改该对象的URL即可<br>如下：</li>
 </ol>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$(&apos;#btn&apos;).on(&apos;click&apos;,function()&#123;</div><div class="line">    var tab = window.open();</div><div class="line">    $.ajax(&#123;</div><div class="line">        type: &apos;POST&apos;,</div><div class="line">        url: &apos;/request&apos;,</div><div class="line">        dataType: &apos;json&apos;,</div><div class="line">        success: function(d)&#123;</div><div class="line">            tab.location = d.url;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 
       
@@ -409,7 +408,7 @@
   <p><span>本文标题:</span><a href="/2017/08/01/window-open/">window.open()打开页面被浏览器拦截的原因及解决方案</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Wang Chong 的个人博客">Wang Chong</a></p>
   <p><span>发布时间:</span>2017年08月01日 - 20:08</p>
-  <p><span>最后更新:</span>2017年08月01日 - 21:08</p>
+  <p><span>最后更新:</span>2017年08月04日 - 23:08</p>
   <p><span>原始链接:</span><a href="/2017/08/01/window-open/" title="window.open()打开页面被浏览器拦截的原因及解决方案">http://dacong.pro/2017/08/01/window-open/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://dacong.pro/2017/08/01/window-open/"  aria-label="复制成功！"></i></span>
   </p>

@@ -1,72 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-    
-    <entry>
-      <title><![CDATA[window.opener]]></title>
-      <url>/2017/08/03/window-opener/</url>
-      <content type="html"><![CDATA[<p>跨页面（新打开的页面，不跨域）传值往往选择<code>location.href</code>传参、<code>cookie</code>或本地存储等的方式。不过 location.href 传参不够便捷且不安全，另外 cookie 存储在<code>window.open</code>后有可能会丢失（cookie 存储路径的问题，这里不再赘述）， 考虑IE兼容性，本地存储也不适用。这个时候看到了<strong><code>window.opener</code></strong>，瞬间清醒。<br><a id="more"></a></p>
-<h5 id="window-opener概述"><a href="#window-opener概述" class="headerlink" title="window.opener概述"></a>window.opener概述</h5><pre><code>返回打开当前窗口的那个窗口的引用
-</code></pre><h5 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h5><p>利用<strong><code>window.opener</code></strong>可以做很多操作，比如：</p>
-<blockquote>
-<p>从父页面取值：<br><strong><code>window.opener</code></strong>.document.getElementById(“name”).value;</p>
-<p>调用父页面的函数：<br><strong><code>window.opener</code></strong>.sf();</p>
-<p>控制父页面的状态：<br><strong><code>window.opener</code></strong>.close();</p>
-</blockquote>
-<h5 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h5><p>在以上操作中有以下两点需要注意：</p>
-<ol>
-<li>在操作期间父窗口不能被关闭，一旦关闭，相关操作将不再有效。</li>
-<li>在新打开的窗口跨域的情况下是无法获取<strong><code>window.opener</code></strong>的，这时候需要在父级及子级页面中将当前域名的一级域名指向<code>document.domain</code>，比如<code>document.domain = &#39;abc.com&#39;</code>来解决问题。注意，这里的父级和子级页面的域名要在同一基础域中（如abc.com和a.abc.com）才可通过以上方法解决，否则以上方法无效，需要通过其它方式（如 <code>jsonp</code>、<code>window.name</code>等）去解决跨域问题。</li>
-</ol>
-]]></content>
-      
-        <categories>
-            
-            <category> JavaScript </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-            <tag> 跨域 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[window.open()打开页面被浏览器拦截的原因及解决方案]]></title>
-      <url>/2017/08/01/window-open/</url>
-      <content type="html"><![CDATA[<blockquote>
-<p>最近项目中遇到了在使用<code>window.open()</code>方法在新窗口打开页面时该页面会被浏览器拦截（阻止打开）的问题。<br>这种情况出现在<code>ajax</code>方法内，也就是说，当浏览器检测到非用户直接（主动）操作产生的新打开窗口时，就会判定该窗口不安全，随即对其进行拦截。<br><a id="more"></a><br>这里提供两种解决方案：</p>
-<ol>
-<li>异步改为同步（在必须异步请求时，可采用下面的方法）</li>
-<li>在ajax方法外新开一个空白页面，并指向一个对象，最后在ajax方法内修改该对象的URL即可<br>如下：</li>
-</ol>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$(&apos;#btn&apos;).on(&apos;click&apos;,function()&#123;</div><div class="line">    var tab = window.open();</div><div class="line">    $.ajax(&#123;</div><div class="line">        type: &apos;POST&apos;,</div><div class="line">        url: &apos;/request&apos;,</div><div class="line">        dataType: &apos;json&apos;,</div><div class="line">        success: function(d)&#123;</div><div class="line">            tab.location = d.url;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-]]></content>
-      
-        <categories>
-            
-            <category> JavaScript </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-            <tag> browser </tag>
-            
-        </tags>
-        
-    </entry>
-    
-  
-  
+<search>
+  <entry>
+    <title><![CDATA[window.opener]]></title>
+    <url>%2F2017%2F08%2F03%2Fwindow-opener%2F</url>
+    <content type="text"><![CDATA[跨页面（新打开的页面，不跨域）传值往往选择location.href传参、cookie或本地存储等的方式。不过 location.href 传参不够便捷且不安全，另外 cookie 存储在window.open后有可能会丢失（cookie 存储路径的问题，这里不再赘述）， 考虑IE兼容性，本地存储也不适用。这个时候看到了window.opener，瞬间清醒。 window.opener概述返回打开当前窗口的那个窗口的引用 使用方法利用window.opener可以做很多操作，比如： 从父页面取值：window.opener.document.getElementById(“name”).value; 调用父页面的函数：window.opener.sf(); 控制父页面的状态：window.opener.close(); 注意事项在以上操作中有以下两点需要注意： 在操作期间父窗口不能被关闭，一旦关闭，相关操作将不再有效。 在新打开的窗口跨域的情况下是无法获取window.opener的，这时候需要在父级及子级页面中将当前域名的一级域名指向document.domain，比如document.domain = &#39;abc.com&#39;来解决问题。注意，这里的父级和子级页面的域名要在同一基础域中（如abc.com和a.abc.com）才可通过以上方法解决，否则以上方法无效，需要通过其它方式（如 jsonp、window.name等）去解决跨域问题。]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>跨域</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[window.open()打开页面被浏览器拦截的原因及解决方案]]></title>
+    <url>%2F2017%2F08%2F01%2Fwindow-open%2F</url>
+    <content type="text"><![CDATA[最近项目中遇到了在使用window.open()方法在新窗口打开页面时该页面会被浏览器拦截（阻止打开）的问题。这种情况出现在ajax方法内，也就是说，当浏览器检测到非用户直接（主动）操作产生的新打开窗口时，就会判定该窗口不安全，随即对其进行拦截。 这里提供两种解决方案： 异步改为同步（在必须异步请求时，可采用下面的方法） 在ajax方法外新开一个空白页面，并指向一个对象，最后在ajax方法内修改该对象的URL即可如下： 1234567891011$(&apos;#btn&apos;).on(&apos;click&apos;,function()&#123; var tab = window.open(); $.ajax(&#123; type: &apos;POST&apos;, url: &apos;/request&apos;, dataType: &apos;json&apos;, success: function(d)&#123; tab.location = d.url; &#125; &#125;);&#125;)]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>browser</tag>
+      </tags>
+  </entry>
 </search>
